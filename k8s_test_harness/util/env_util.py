@@ -78,7 +78,7 @@ class RockMetaInfo:
         unset_keys = [
             dict_key
             for kwarg, dict_key in kwarg_to_key_map.items()
-            if init_kwargs[kwarg] == None]
+            if init_kwargs[kwarg] is None]
         if unset_keys:
             raise ValueError(
                 f"Missing ROCK build meta info fields {unset_keys} from "

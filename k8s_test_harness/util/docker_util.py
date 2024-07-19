@@ -40,4 +40,6 @@ def list_files_under_container_image_dir(
 
     proc = subprocess.run(cmd, check=True, capture_output=True)
 
-    return [l.decode('utf8').strip() for l in proc.stdout.splitlines()]
+    return [
+        line.decode('utf8').strip()
+        for line in proc.stdout.splitlines()]
